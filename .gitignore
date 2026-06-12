@@ -1,0 +1,20 @@
+# venv
+modo_ia/
+
+# pesos de modelos
+models/*.pt
+
+# data pesada (videos, datasets)
+data/*
+!data/.gitkeep
+
+# outputs JSON
+out*.json
+outputs/
+
+# python
+__pycache__/
+*.pyc
+
+# secretos
+.env

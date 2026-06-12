@@ -1,0 +1,136 @@
+Fase 1: Arquitectura y Diseño de la API
+El primer paso es definir cómo se comunicará el cliente (tu app web) con el servidor. Lo ideal aquí es usar FastAPI (Python), ya que se integra nativamente con las librerías de IA y maneja procesos asíncronos de maravilla.
+
+Definición de Endpoints:
+
+POST /api/v1/analyze/upload: Recibe el archivo .mp4. Guarda el video temporalmente y devuelve un identificador único de tarea (job_id).
+
+GET /api/v1/analyze/status/{job_id}: El frontend consulta este endpoint cada pocos segundos para saber si el video está "En Cola", "Procesando" o "Completado".
+
+GET /api/v1/analyze/results/{job_id}: Una vez completado, devuelve el JSON con todas las métricas, coordenadas y estadísticas generadas.
+
+Contrato de Datos (JSON Payload): Diseñar la estructura exacta del JSON que devolverá la IA. Por ejemplo: una lista de fotogramas, cada uno con las coordenadas [x, y] del balón, y una lista de eventos (ej. {"timestamp": 12.5, "event": "remate"}).
+
+Herramientas: Crear una colección en Postman con estos tres endpoints y datos simulados (mock) para que el desarrollo del frontend pueda avanzar en paralelo sin esperar a que la IA esté lista.
+
+Fase 2: Desarrollo del Motor de Inferencia (Script Base)
+Antes de conectarlo a la web, el núcleo del sistema debe funcionar perfectamente por terminal.
+
+Entorno Aislado: Crear el entorno virtual específico (ese clásico modo_ia) e instalar las dependencias críticas: opencv-python, ultralytics (para YOLOv8/v11), y numpy.
+
+Extracción y Procesamiento:
+
+Escribir una función que tome la ruta de un video local y lo lea frame por frame.
+
+Pasar cada frame por el modelo YOLO pre-entrenado.
+
+Almacenar las coordenadas detectadas en una estructura de datos en memoria (diccionarios o listas de Python).
+
+Traducción de Coordenadas a Eventos: Escribir la lógica matemática (el algoritmo) que analiza la trayectoria guardada para detectar cambios bruscos de dirección e identificar toques, pases o remates.
+
+Generación de Output: Exportar la estructura de datos a un archivo .json local.
+
+Fase 3: Integración Backend y Gestión de Tareas Asíncronas
+Aquí unimos la API de la Fase 1 con el Motor de la Fase 2. Un servidor web no puede quedarse esperando 5 minutos a que un video se procese para responder un HTTP 200, por lo que necesitamos manejo de tareas en segundo plano.
+
+Gestor de Tareas Ligero: Para el MVP, implementar la clase BackgroundTasks nativa de FastAPI. Recibes el video, inicias el script de YOLO en el BackgroundTask, y respondes inmediatamente con el job_id.
+
+Almacenamiento de Estado: Configurar una base de datos pequeña (SQLite o PostgreSQL local) para guardar el estado del job_id y actualizarlo a medida que el script avanza (0% -> 50% -> 100%).
+
+Gestión de Archivos: Implementar una rutina de limpieza para eliminar los archivos .mp4 originales del servidor una vez que el JSON se ha generado exitosamente, para no saturar el almacenamiento.
+
+Fase 4: Contenerización y Preparación para Producción
+Una vez que la API recibe el video vía Postman, lo procesa asíncronamente y devuelve el JSON correcto, es momento de aislar todo para que funcione en cualquier entorno.
+
+Dockerización del Backend: Crear un Dockerfile optimizado. Es vital usar una imagen base ligera de Python, pero que incluya las dependencias del sistema necesarias para compilar OpenCV (como libgl1).
+
+Orquestación: Configurar un docker-compose.yml que levante el contenedor de la API y el de la base de datos (si aplica).
+
+Configuración de Hardware: Al momento de pasar al VPS, la clave será configurar el Docker Toolkit de NVIDIA. Esto permitirá que el contenedor de FastAPI exponga y utilice los CUDA cores de la RTX 3050LP, reduciendo el tiempo de procesamiento de minutos a segundos.
+
+Para que el frontend (en Next.js/React) pueda consumir los datos de manera ultra fluida, renderizar gráficos estadísticos y dibujar trayectorias en la pantalla sin sufrir por problemas de rendimiento, el JSON de salida no debe ser un volcado masivo de datos crudos por fotograma. Debe estar estructurado en tres niveles: Metadatos globales, Series de tiempo para gráficos y Eventos discretos para la línea de tiempo.
+
+Además, un truco fundamental de visión artificial para la web es normalizar las coordenadas (de 0 a 1). Si la IA detecta el balón en la posición de píxeles (1920, 1080) en un video 4K, el frontend se romperá si el usuario lo ve desde un celular. Al normalizarlas entre 0.0 y 1.0 (porcentaje de la pantalla), el frontend solo tiene que multiplicar ese valor por el ancho/alto del contenedor HTML (sea un Canvas o un SVG) y se adaptará perfectamente a cualquier pantalla (responsive).
+
+Aquí tienes la propuesta del diseño del JSON de salida (GET /api/v1/analyze/results/{job_id}):
+
+{
+  "match_metadata": {
+    "job_id": "vly_987654321_chk",
+    "status": "completed",
+    "processed_at": "2026-06-11T22:45:00Z",
+    "video": {
+      "duration_seconds": 124.5,
+      "fps_processed": 30,
+      "original_resolution": "1920x1080"
+    },
+    "statistics_summary": {
+      "total_rallies": 12,
+      "total_ball_touches": 142,
+      "max_ball_speed_kmh": 82.4,
+      "attack_efficiency_percentage": 64.5
+    }
+  },
+  "charts_data": {
+    "ball_speed_timeline": [
+      {"timestamp": 0.0, "speed": 0.0},
+      {"timestamp": 0.5, "speed": 45.2},
+      {"timestamp": 1.2, "speed": 78.1},
+      {"timestamp": 1.8, "speed": 12.3}
+    ],
+    "team_possession_percentage": {
+      "team_a": 52.3,
+      "team_b": 47.7
+    }
+  },
+  "spatial_data": {
+    "ball_heat_map": [
+      {"x_norm": 0.25, "y_norm": 0.45, "intensity": 8},
+      {"x_norm": 0.72, "y_norm": 0.12, "intensity": 14},
+      {"x_norm": 0.50, "y_norm": 0.50, "intensity": 25}
+    ],
+    "player_impact_zones": [
+      {"player_id": "player_1", "role": "setter", "avg_x": 0.51, "avg_y": 0.48}
+    ]
+  },
+  "timeline_events": [
+    {
+      "event_id": "evt_001",
+      "timestamp": 14.2,
+      "type": "saque",
+      "team": "team_a",
+      "player_id": "player_5",
+      "confidence": 0.94,
+      "ball_coordinates": {"x_norm": 0.15, "y_norm": 0.85}
+    },
+    {
+      "event_id": "evt_002",
+      "timestamp": 15.8,
+      "type": "recepcion",
+      "team": "team_b",
+      "player_id": "player_3",
+      "confidence": 0.89,
+      "ball_coordinates": {"x_norm": 0.75, "y_norm": 0.32}
+    },
+    {
+      "event_id": "evt_003",
+      "timestamp": 17.1,
+      "type": "armado",
+      "team": "team_b",
+      "player_id": "player_1",
+      "confidence": 0.97,
+      "ball_coordinates": {"x_norm": 0.52, "y_norm": 0.45}
+    },
+    {
+      "event_id": "evt_004",
+      "timestamp": 18.3,
+      "type": "remate",
+      "team": "team_b",
+      "player_id": "player_4",
+      "confidence": 0.91,
+      "ball_coordinates": {"x_norm": 0.48, "y_norm": 0.61}
+    }
+  ]
+}
+
+Por qué esta estructura es ideal para graficar en el Front?statistics_summary (Tarjetas de KPI Rápidas):Cualquier librería de componentes UI (como Shadcn o Tailwind pura) puede mapear directamente estos valores en tarjetas de impacto en la parte superior de la pantalla ("Total de remates", "Velocidad máxima"). No requiere cálculos en el navegador, el backend ya le da el dato masticado.charts_data (Gráficos de Líneas y Pastel):Estructurado como un array de objetos planos ({"timestamp": X, "speed": Y}). Librerías populares de React como Recharts o Chart.js se alimentan exactamente de este formato. Solo pasas el array al componente <LineChart data={ball_speed_timeline} /> y la gráfica de velocidad del balón se dibuja de inmediato.spatial_data (Mapas de calor y Canvas de la cancha):Las coordenadas x_norm y y_norm (valores de 0 a 1) permiten renderizar un fondo SVG de una cancha de voleibol y posicionar puntos encima usando CSS de manera porcentual (style={{ left: ${x_norm * 100}%`, top: `${y_norm * 100}% }}). Es ultraligero y perfectamente responsivo.timeline_events (Lista Interactiva y Reproductor de Video):Es ideal para crear una barra lateral con la cronología del partido. Al hacer clic en un evento (por ejemplo, el "remate" al segundo 18.3), el frontend puede disparar una función que mueva el elemento nativo de video de HTML5 directamente a ese segundo (videoRef.current.currentTime = 18.3). Esto le da al entrenador un acceso inmediato a los errores o aciertos sin tener que buscar manualmente en el video.
