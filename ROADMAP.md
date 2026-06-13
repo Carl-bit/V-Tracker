@@ -29,7 +29,7 @@ Objetivo: el nucleo funciona standalone, sin web. Aqui se valida el balon.
 - [x] Script: leer un .mp4 local frame a frame (opencv), con muestreo 1/N frames
 - [x] YOLO26 (n/s) inferencia con `half=True` sobre cada frame -> detecciones
 - [x] Validar deteccion del balon en VIDEOS REALES propios (no demos) -> recall ~16%, COCO no alcanza
-- [ ] Si recall del balon es bajo: fine-tune YOLO26 con dataset de voleibol (Roboflow) o tiling/SAHI
+- [~] Si recall del balon es bajo: fine-tune YOLO26 con dataset de voleibol (Roboflow) o tiling/SAHI -> plan en docs/plan-finetune-balon.md, falta train en GPU
 - [ ] Tracking: ByteTrack para jugadores; trayectoria de balon por asociacion + interpolacion
 - [ ] Algoritmo de eventos (heuristico): saque, recepcion, armado, remate sobre la trayectoria
 - [ ] Normalizar coordenadas a 0.0-1.0
