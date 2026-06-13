@@ -15,12 +15,23 @@ Especialista ademas deja camino limpio a TrackNet en fase B (drop-in).
 
 ## Dataset (Roboflow Universe)
 
-Candidatos (verificar a mano en navegador; Universe bloquea scraping):
+Candidato elegido por el usuario:
+
+0. `actions-players/volleyball-actions` - PENDIENTE verificar en navegador que
+   tenga clase balon anotada (por el nombre parece dataset de acciones:
+   remate/bloqueo/etc). Si no tiene balon como clase, NO sirve para esto.
+
+Alternativos (verificar a mano; Universe bloquea scraping):
 
 1. `primaryws/volleyball_ball_object_detection_dataset` - anotado para balon en
-   partidos reales. Candidato principal.
+   partidos reales.
 2. `salo-levy-nlqrn/volley-ball-detection` - ~324 imgs. Complemento.
 3. `volleyballyolo/volleyballyolo` - ball + person.
+
+Para descargar se necesita UNO de estos (cuenta Roboflow gratis):
+- API key del usuario (Settings -> API) -> descarga via pip `roboflow`, o
+- descarga manual del zip en el navegador (export "YOLOv8" / TXT) y dejarlo en
+  `data/datasets/`.
 
 Criterio de seleccion, en orden:
 - Imagenes de TRANSMISION / plano abierto. Un dataset de primeros planos no
@@ -60,8 +71,41 @@ Justificacion (reglas duras CLAUDE.md):
 - Augmentations: defaults ultralytics (mosaic/scale ya ayudan a objeto chico).
   No tocar sin baseline del fine-tune.
 
-Donde: VPS con la 3050. La maquina dev no tiene GPU NVIDIA (train CPU inviable).
-Alternativa costo-0: Colab free T4, mismo comando, bajar best.pt.
+## Donde entrenar: PC dev con RX 9070 XT (local, costo 0)
+
+La PC dev tiene Radeon RX 9070 XT (16GB). AMD publica PyTorch oficial para
+Windows (ROCm 7.2.1) con la 9070 XT soportada. Eso habilita train local.
+Con 16GB VRAM: subir a batch=8 en imgsz=1280 (el comando de arriba es para la
+3050; en la 9070 XT mismo comando con batch=8).
+
+Prerequisitos (una vez):
+1. Driver Adrenalin >= 26.2.2 (verificar/actualizar a mano).
+2. Python 3.12 (las wheels son cp312; en la PC solo hay 3.13):
+   `winget install Python.Python.3.12`
+3. Venv SEPARADO de train (no tocar modo_ia, que queda CPU para el pipeline):
+   `py -3.12 -m venv modo_train`
+4. Instalar ROCm SDK + torch AMD en modo_train (CMD):
+   ```
+   pip install --no-cache-dir ^
+     https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/rocm_sdk_core-7.2.1-py3-none-win_amd64.whl ^
+     https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/rocm_sdk_devel-7.2.1-py3-none-win_amd64.whl ^
+     https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/rocm_sdk_libraries_custom-7.2.1-py3-none-win_amd64.whl ^
+     https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/rocm-7.2.1.tar.gz
+   pip install --no-cache-dir ^
+     https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/torch-2.9.1%2Brocm7.2.1-cp312-cp312-win_amd64.whl ^
+     https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/torchvision-0.24.1%2Brocm7.2.1-cp312-cp312-win_amd64.whl
+   pip install ultralytics --no-deps && pip install <deps de ultralytics sin torch>
+   ```
+5. Smoke test: `python -c "import torch; print(torch.cuda.is_available())"`
+   (ROCm se expone como cuda en torch).
+
+Riesgo: stack PyTorch-Windows-AMD es reciente (preview 2025, estable 2026).
+Si el train falla (op no soportada, NaN con AMP), fallback inmediato costo-0:
+Colab free T4, mismo comando, bajar best.pt. No pelearse dias con ROCm.
+
+OJO: el train local NO cambia el target de inferencia. El .pt resultante corre
+igual en la 3050 del VPS (regla 6: half=True ahi). En esta PC la inferencia de
+validacion corre por CPU u GPU AMD, da lo mismo: lo que se mide es recall.
 
 ## Integracion post-train (cambio chico, no ahora)
 
@@ -84,6 +128,9 @@ python -m tests.validate_ball --start 30 --end 90   # con especialista integrado
 ## Pasos
 
 1. [x] Este plan commiteado.
-2. [ ] (manual) Verificar candidatos en Roboflow Universe, elegir dataset.
-3. [ ] (VPS o Colab) Descargar dataset + train.
-4. [ ] Integrar best.pt en Detector + re-correr validate_ball vs baseline 16%.
+2. [ ] (manual, usuario) Verificar que actions-players/volleyball-actions tenga
+       clase balon; pasar API key de Roboflow o el zip exportado (YOLOv8/TXT).
+3. [ ] (manual, usuario) Driver Adrenalin >= 26.2.2.
+4. [ ] Setup modo_train (py 3.12 + torch ROCm 7.2.1) + smoke test GPU.
+5. [ ] Train local en la 9070 XT (batch=8, imgsz=1280). Fallback: Colab T4.
+6. [ ] Integrar best.pt en Detector + re-correr validate_ball vs baseline 16%.
