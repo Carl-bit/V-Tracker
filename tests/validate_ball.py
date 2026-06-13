@@ -34,6 +34,9 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--sample", type=int, default=10, help="1 de cada N frames")
     p.add_argument("--conf", type=float, default=0.15, help="umbral conf (medir, no filtrar)")
     p.add_argument("--model", default="yolo26n.pt")
+    p.add_argument("--ball-model", default=None,
+                   help="pesos especialista de balon (P1.3b); si se pasa, balon sale de ahi")
+    p.add_argument("--ball-conf", type=float, default=0.25, help="umbral conf del especialista")
     p.add_argument("--save-frames", type=int, default=8, help="K frames anotados a disco")
     return p.parse_args()
 
@@ -63,8 +66,11 @@ def main() -> None:
     print(f"video: {video}")
     print(f"rango: {args.start:.1f}s - {end:.1f}s | sample 1/{args.sample} | conf >= {args.conf}")
 
-    det = Detector(model=args.model, conf=args.conf)
+    det = Detector(model=args.model, conf=args.conf,
+                   ball_model=args.ball_model, ball_conf=args.ball_conf)
     print(f"device={det.device} half={det.half} imgsz={det.imgsz} model={args.model}")
+    if args.ball_model:
+        print(f"especialista balon: {args.ball_model} conf>={args.ball_conf} imgsz={det.ball_imgsz}")
 
     FRAMES_DIR.mkdir(parents=True, exist_ok=True)
     total = 0

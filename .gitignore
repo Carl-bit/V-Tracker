@@ -1,5 +1,6 @@
 # venv
 modo_ia/
+modo_train/
 
 # pesos de modelos
 models/*.pt
