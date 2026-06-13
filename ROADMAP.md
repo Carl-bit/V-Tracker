@@ -27,7 +27,7 @@ DoD: el front puede consumir mocks sin que la IA exista. /docs de FastAPI muestr
 Objetivo: el nucleo funciona standalone, sin web. Aqui se valida el balon.
 
 - [x] Script: leer un .mp4 local frame a frame (opencv), con muestreo 1/N frames
-- [ ] YOLO26 (n/s) inferencia con `half=True` sobre cada frame -> detecciones
+- [x] YOLO26 (n/s) inferencia con `half=True` sobre cada frame -> detecciones
 - [ ] Validar deteccion del balon en VIDEOS REALES propios (no demos)
 - [ ] Si recall del balon es bajo: fine-tune YOLO26 con dataset de voleibol (Roboflow) o tiling/SAHI
 - [ ] Tracking: ByteTrack para jugadores; trayectoria de balon por asociacion + interpolacion
