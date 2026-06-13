@@ -11,12 +11,12 @@ Leyenda: [ ] pendiente  [~] en curso  [x] hecho
 
 Objetivo: tener el esqueleto y el contrato de datos para trabajar en paralelo.
 
-- [ ] Repo + estructura de carpetas (ver CLAUDE.md)
-- [ ] Entorno virtual `modo_ia` + deps base (ultralytics, opencv-python, numpy, fastapi, pydantic, uvicorn, arq, redis)
-- [ ] Modelos Pydantic del JSON de salida (match_metadata, charts_data, spatial_data, timeline_events) con `schema_version`
-- [ ] FastAPI con los 3 endpoints devolviendo MOCK fijo:
+- [x] Repo + estructura de carpetas (ver CLAUDE.md)
+- [x] Entorno virtual `modo_ia` + deps base (ultralytics, opencv-python, numpy, fastapi, pydantic, uvicorn, arq, redis)
+- [x] Modelos Pydantic del JSON de salida (match_metadata, charts_data, spatial_data, timeline_events) con `schema_version`
+- [x] FastAPI con los 3 endpoints devolviendo MOCK fijo:
       POST /api/v1/analyze/upload, GET /status/{job_id}, GET /results/{job_id}
-- [ ] Coleccion Postman con los 3 endpoints + ejemplos mock
+- [x] Mocks para front: tests/mocks/result_example.json + docs/curl-examples.md
 
 DoD: el front puede consumir mocks sin que la IA exista. /docs de FastAPI muestra el contrato.
 

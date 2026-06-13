@@ -1,0 +1,121 @@
+{
+  "match_metadata": {
+    "schema_version": "1.0.0",
+    "job_id": "vly_987654321_chk",
+    "status": "completado",
+    "processed_at": "2026-06-11T22:45:00Z",
+    "sampled_fps": 10.0,
+    "video": {
+      "duration_seconds": 124.5,
+      "fps_processed": 30.0,
+      "original_resolution": "1920x1080"
+    },
+    "statistics_summary": {
+      "total_rallies": 12,
+      "total_ball_touches": 142,
+      "max_ball_speed_kmh": 82.4,
+      "attack_efficiency_percentage": 64.5
+    }
+  },
+  "charts_data": {
+    "ball_speed_timeline": [
+      {
+        "timestamp": 0.0,
+        "speed": 0.0
+      },
+      {
+        "timestamp": 0.5,
+        "speed": 45.2
+      },
+      {
+        "timestamp": 1.2,
+        "speed": 78.1
+      },
+      {
+        "timestamp": 1.8,
+        "speed": 12.3
+      }
+    ],
+    "team_possession_percentage": {
+      "team_a": 52.3,
+      "team_b": 47.7
+    }
+  },
+  "spatial_data": {
+    "ball_heat_map": [
+      {
+        "x_norm": 0.25,
+        "y_norm": 0.45,
+        "intensity": 8
+      },
+      {
+        "x_norm": 0.72,
+        "y_norm": 0.12,
+        "intensity": 14
+      },
+      {
+        "x_norm": 0.5,
+        "y_norm": 0.5,
+        "intensity": 25
+      }
+    ],
+    "player_impact_zones": [
+      {
+        "player_id": "player_1",
+        "role": "setter",
+        "avg_x": 0.51,
+        "avg_y": 0.48
+      }
+    ]
+  },
+  "timeline_events": [
+    {
+      "event_id": "evt_001",
+      "timestamp": 14.2,
+      "type": "saque",
+      "team": "team_a",
+      "player_id": "player_5",
+      "confidence": 0.94,
+      "ball_coordinates": {
+        "x_norm": 0.15,
+        "y_norm": 0.85
+      }
+    },
+    {
+      "event_id": "evt_002",
+      "timestamp": 15.8,
+      "type": "recepcion",
+      "team": "team_b",
+      "player_id": "player_3",
+      "confidence": 0.89,
+      "ball_coordinates": {
+        "x_norm": 0.75,
+        "y_norm": 0.32
+      }
+    },
+    {
+      "event_id": "evt_003",
+      "timestamp": 17.1,
+      "type": "armado",
+      "team": "team_b",
+      "player_id": "player_1",
+      "confidence": 0.97,
+      "ball_coordinates": {
+        "x_norm": 0.52,
+        "y_norm": 0.45
+      }
+    },
+    {
+      "event_id": "evt_004",
+      "timestamp": 18.3,
+      "type": "remate",
+      "team": "team_b",
+      "player_id": "player_4",
+      "confidence": 0.91,
+      "ball_coordinates": {
+        "x_norm": 0.48,
+        "y_norm": 0.61
+      }
+    }
+  ]
+}
