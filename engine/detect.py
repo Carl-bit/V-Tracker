@@ -36,16 +36,39 @@ class Detector:
         ball_model: str | None = None,
         ball_imgsz: int = 1280,
         ball_conf: float = 0.25,
+        device: str = "auto",
+        half: bool | None = None,
     ) -> None:
         import torch
         from ultralytics import YOLO
 
         self.imgsz = imgsz
         self.conf = conf
-        self.device = "cuda:0" if torch.cuda.is_available() else "cpu"
-        self.half = self.device != "cpu"
-        if not self.half:
+        # device: "auto" detecta GPU (cuda/ROCm); "cpu" o "cuda" fuerzan (benchmark).
+        if device == "cpu":
+            self.device = "cpu"
+        elif device == "cuda":
+            self.device = "cuda:0"
+        else:
+            self.device = "cuda:0" if torch.cuda.is_available() else "cpu"
+
+        # half (FP16): regla 6 dice half=True en GPU. PERO el FP16 de MIOpen en ROCm
+        # 7.2.1 Windows (preview) esta roto: la 1a inferencia ok y el resto devuelve
+        # 0 cajas. En FP32 es estable y correcto. Por eso half se auto-desactiva en
+        # ROCm (torch.version.hip != None) y queda activo solo en CUDA NVIDIA / VPS.
+        is_rocm = getattr(torch.version, "hip", None) is not None
+        if self.device == "cpu":
+            self.half = False
+        elif half is not None:
+            self.half = half
+        else:
+            self.half = not is_rocm
+        if self.device == "cpu":
             logger.warning("Sin GPU: inferencia en CPU sin half. Sera lento.")
+        elif is_rocm and self.half:
+            logger.warning("half=True forzado en ROCm: FP16 inestable (MIOpen), puede dar 0 cajas.")
+        elif is_rocm:
+            logger.info("ROCm detectado: half=False (FP16 inestable en MIOpen Windows).")
         # path bajo models/ -> ultralytics descarga ahi si no existe
         self.model = YOLO(f"models/{model}")
         self.model.to(self.device)
