@@ -2,15 +2,22 @@
 modo_ia/
 modo_train/
 
-# pesos de modelos
-models/*.pt
+# pesos de modelos (cualquier lado: models/, models/runs/**/weights/, raiz)
+*.pt
 
-# data pesada (videos, datasets)
+# datasets / data pesada
 data/*
 !data/.gitkeep
 
-# outputs JSON
+# videos (samples, overlays de debug, recortes) - NUNCA a git, pesan demasiado
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# salidas del motor / debug
 out*.json
+out/
 outputs/
 
 # python

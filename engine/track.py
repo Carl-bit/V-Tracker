@@ -138,21 +138,24 @@ class BallTracker:
         balls = [d for d in detections if d["cls"] == "balon"]
         self._frames.append((frame_idx, float(timestamp), balls))
 
-    def _static_cells(self) -> set[tuple[int, int]]:
+    def _static_cells(self, frames: list[tuple[int, float, list[dict]]]) -> set[tuple[int, int]]:
         """Celdas (grilla static_cell_px) donde un balon persiste inmovil = balon de banda.
 
         Una celda es estatica si tiene detecciones que abarcan >= static_min_span_s
         segundos Y ocupan >= static_min_occupancy de los frames de ese tramo (el balon
         de juego cruza una celda en 1-2 frames; el quieto esta casi siempre presente).
+
+        Se computa por SHOT: tras un corte de camara el balon de banda salta de lugar,
+        asi que una celda estatica solo tiene sentido dentro de una misma toma.
         """
         cell = self.static_cell_px
         ords_by_cell: dict[tuple[int, int], list[int]] = {}
-        for ordi, (_fidx, _ts, balls) in enumerate(self._frames):
+        for ordi, (_fidx, _ts, balls) in enumerate(frames):
             for b in balls:
                 cx, cy = _center(b)
                 key = (int(cx // cell), int(cy // cell))
                 ords_by_cell.setdefault(key, []).append(ordi)
-        ts_of = [ts for _f, ts, _b in self._frames]
+        ts_of = [ts for _f, ts, _b in frames]
         static: set[tuple[int, int]] = set()
         for key, ords in ords_by_cell.items():
             omin, omax = min(ords), max(ords)
@@ -167,12 +170,37 @@ class BallTracker:
             logger.info("balon estatico: %d celda(s) descartada(s) del tracking", len(static))
         return static
 
-    def trajectory(self) -> list[dict]:
-        """Devuelve la trayectoria temporal: [{frame_idx, timestamp, x, y, interpolated}].
+    def _split_by_cuts(
+        self, scene_cuts: list[float]
+    ) -> list[list[tuple[int, float, list[dict]]]]:
+        """Parte self._frames en shots: un frame con ts >= proximo corte abre shot nuevo."""
+        cuts = sorted(scene_cuts)
+        if not cuts:
+            return [self._frames]
+        shots: list[list[tuple[int, float, list[dict]]]] = [[]]
+        ci = 0
+        for fr in self._frames:
+            while ci < len(cuts) and fr[1] >= cuts[ci]:
+                shots.append([])
+                ci += 1
+            shots[-1].append(fr)
+        return [s for s in shots if s]
 
-        x, y = centro del balon en PIXELES. interpolated=True en puntos rellenados.
+    def trajectory(self, scene_cuts: list[float] | None = None) -> list[dict]:
+        """Trayectoria temporal: [{frame_idx, timestamp, x, y, interpolated}] en PIXELES.
+
+        scene_cuts: timestamps de cortes de camara (engine.scenes). La asociacion, el
+        gate de velocidad y el filtro de balon estatico se reinician en cada shot: tras
+        un corte no hay continuidad de movimiento ni la misma posicion de balon de banda.
         """
-        static = self._static_cells()
+        out: list[dict] = []
+        for shot in self._split_by_cuts(scene_cuts or []):
+            out.extend(self._shot_trajectory(shot))
+        return out
+
+    def _shot_trajectory(self, frames: list[tuple[int, float, list[dict]]]) -> list[dict]:
+        """Trayectoria de UN shot (sin cortes de camara dentro)."""
+        static = self._static_cells(frames)
         cell = self.static_cell_px
 
         # 1) asociacion: 1 punto aceptado por frame (o None si no hay balon)
@@ -180,7 +208,7 @@ class BallTracker:
         last_xy: tuple[float, float] | None = None
         last_ts = 0.0
         misses = 0  # frames consecutivos sin punto aceptado
-        for frame_idx, ts, balls in self._frames:
+        for frame_idx, ts, balls in frames:
             # descarta candidatos en celdas de balon estatico (banda)
             if static:
                 balls = [b for b in balls
@@ -224,7 +252,7 @@ class BallTracker:
 
         # 3) interpolacion lineal de huecos cortos entre puntos reales consecutivos
         filled: list[dict] = []
-        idx_by_frame = {f[0]: i for i, f in enumerate(self._frames)}
+        idx_by_frame = {f[0]: i for i, f in enumerate(frames)}
         for a, b in zip(traj, traj[1:]):
             filled.append(a)
             # frames muestreados estrictamente entre a y b
@@ -233,7 +261,7 @@ class BallTracker:
             if 0 < gap <= self.max_gap:
                 for k in range(1, gap + 1):
                     t = k / (gap + 1)
-                    g_idx, g_ts, _balls = self._frames[ia + k]
+                    g_idx, g_ts, _balls = frames[ia + k]
                     filled.append(
                         {
                             "frame_idx": g_idx,
