@@ -131,6 +131,72 @@ Usa un Redis en memoria; ejercita la tarea real `analyze_video` end-to-end:
 Termina en `DoD ... OK`: status `procesando -> completado` + result valido en Redis.
 Sirve para validar la Fase 2 en este PC antes de tener Redis.
 
+## A.6 Probar el motor con CUALQUIER video (receta generica)
+
+Para meter un .mp4 nuevo y ver si el trackeo sale bien. Dos artefactos: el JSON
+del contrato y un `overlay.mp4` para juzgar con el ojo (balon + estela + eventos).
+
+Pasos (todos los videos viven en `data/sample/`, rutas con espacios -> comillas):
+
+1) Correr el motor sobre una VENTANA (un rally, ~15-40s). En CPU acotar SIEMPRE
+   con `--start/--end`; el video entero solo en GPU. Elegir el `--ball-model`
+   segun la vista (ver tabla abajo).
+2) Pintar el overlay de esa misma ventana (no re-infiere, sin GPU, rapido).
+3) Abrir el `overlay.mp4` y mirar: circulo lleno = balon detectado, hueco =
+   interpolado. Estela continua = trackeo ok. Banners = eventos.
+4) Leer el log de `engine.run`: `balon=N pts`, `eventos=[...]`, `cortes de escena`.
+
+Que modelo de balon usar:
+
+```
+vista          video de prueba           --ball-model       --roi
+-----------    -----------------------   ----------------   --------------------
+frontal        VODME-vs-Mamba.mp4        ball_best.pt       no (camara unica)
+panoramica     FINAL-LIVOME-2024.mp4     ball_best.pt       si (roi.json) recom.
+```
+`ball_best.pt` es el generalista (frontal + Calle Larga). `ball_frontal2.pt` es el
+especialista solo-frontal: alternativa si en frontal el generalista mete falsos
+positivos. Panoramica NO esta en el set de entrenamiento del balon -> esperar
+recall bajo; es una PRUEBA de hasta donde llega, no un caso resuelto (regla 1).
+
+### Frontal: VODME-vs-Mamba
+
+```
+# 1) motor, ventana corta de prueba (ajustar --start/--end al rally que quieras)
+.\cpu.cmd -m engine.run --video "data/sample/VODME-vs-Mamba.mp4" --out vodme.json --ball-model ball_best.pt --sample 10 --start 60 --end 90
+
+# 2) overlay de la MISMA ventana
+.\cpu.cmd -m scripts.overlay --video "data/sample/VODME-vs-Mamba.mp4" --json vodme.json --start 60 --end 90 --out vodme_overlay.mp4
+```
+Si ves falsos positivos del balon (luces, lineas), repetir el paso 1 con
+`--ball-model ball_frontal2.pt` y comparar.
+
+### Panoramica: FINAL-LIVOME-2024
+
+La vista abierta muestra publico/marcador fuera de la cancha -> conviene ROI para
+descartar detecciones de balon ahi. Marcar el poligono UNA vez (clic vertices,
+guarda json), luego pasarlo a las dos etapas con `--roi`:
+```
+# 0) (una vez) marcar la cancha -> genera roi_livome.json
+.\cpu.cmd -m scripts.pick_roi --video "data/sample/FINAL-LIVOME-2024.mp4" --out roi_livome.json
+
+# 1) motor con ROI
+.\cpu.cmd -m engine.run --video "data/sample/FINAL-LIVOME-2024.mp4" --out livome.json --ball-model ball_best.pt --roi roi_livome.json --sample 10 --start 60 --end 90
+
+# 2) overlay con el mismo ROI dibujado (linea azul = zona valida)
+.\cpu.cmd -m scripts.overlay --video "data/sample/FINAL-LIVOME-2024.mp4" --json livome.json --roi roi_livome.json --start 60 --end 90 --out livome_overlay.mp4
+```
+Sin ROI tambien corre (omitir `--roi` en ambos pasos); solo filtra menos ruido.
+
+### Video COMPLETO (cuando la ventana ya se ve bien)
+
+Quitar `--start/--end`. Lento en CPU; usar `.\gpu.cmd` para el partido entero:
+```
+.\gpu.cmd -m engine.run --video "data/sample/VODME-vs-Mamba.mp4" --out vodme.json --ball-model ball_best.pt --sample 10
+```
+El overlay del partido entero pesa: acotarlo por tramos (`--start/--end`) o subir
+`--stride` para aligerar.
+
 ---
 
 # B. VPS (produccion) - cola async real

@@ -80,7 +80,8 @@ def _active_windows(coarse_traj: list[dict], duration: float) -> list[tuple[floa
 def _detection_pass(
     video, det, roi, w_px, h_px, sample, start_seg, end_seg,
     track_players, windows, total, on_progress, prog_lo, prog_hi, label,
-    scene_detector=None, scene_cuts=None,
+    scene_detector=None, scene_cuts=None, residual_frac=1.0, detour_ratio=1.8,
+    reacq_radius_frac=0.5,
 ):
     """Una pasada de deteccion. windows!=None procesa solo frames dentro de ellas.
 
@@ -91,7 +92,8 @@ def _detection_pass(
     Devuelve (players, ball_trajectory, frames_procesados, scene_cuts).
     """
     ptracker = PlayerTracker() if track_players else None
-    btracker = BallTracker(frame_width=w_px)
+    btracker = BallTracker(frame_width=w_px, residual_frac=residual_frac, detour_ratio=detour_ratio,
+                           reacq_radius_frac=reacq_radius_frac)
     players: dict[int, list[dict]] = {}
     processed = 0
     for frame_idx, ts, frame in read_frames(video, sample_every_n=sample):
@@ -130,6 +132,10 @@ def run_pipeline(
     half: bool | None = None,
     roi_path: str | Path | None = None,
     dense_sample: int | None = 3,
+    residual_frac: float = 1.0,
+    detour_ratio: float = 1.8,
+    reacq_radius_frac: float = 0.5,
+    ball_conf: float = 0.25,
     on_progress=None,
 ):
     """video -> (meta, ball_traj, player_tracks, events, sampled_fps). Todo en px.
@@ -151,7 +157,7 @@ def run_pipeline(
         f" + densa 1/{dense_sample} en ventanas" if two_pass else "",
     )
 
-    det = Detector(model=model, ball_model=ball_model, device=device, half=half)
+    det = Detector(model=model, ball_model=ball_model, device=device, half=half, ball_conf=ball_conf)
     logger.info("detector listo: model=%s ball=%s device=%s half=%s",
                 model, ball_model, det.device, det.half)
 
@@ -167,7 +173,8 @@ def run_pipeline(
         video, det, roi, w_px, h_px, sample_every_n, start_seg, end_seg,
         track_players=True, windows=None, total=total,
         on_progress=on_progress, prog_lo=0.0, prog_hi=p1_hi, label="pasada1",
-        scene_detector=scene_detector,
+        scene_detector=scene_detector, residual_frac=residual_frac, detour_ratio=detour_ratio,
+        reacq_radius_frac=reacq_radius_frac,
     )
     logger.info("pasada1 fin: %d frames, balon=%d pts, cortes de escena=%d",
                 n1, len(coarse_traj), len(scene_cuts))
@@ -185,7 +192,8 @@ def run_pipeline(
                 video, det, roi, w_px, h_px, dense_sample, start_seg, end_seg,
                 track_players=False, windows=windows, total=dense_total,
                 on_progress=on_progress, prog_lo=0.5, prog_hi=1.0, label="pasada2",
-                scene_cuts=scene_cuts,
+                scene_cuts=scene_cuts, residual_frac=residual_frac, detour_ratio=detour_ratio,
+                reacq_radius_frac=reacq_radius_frac,
             )
             logger.info("pasada2 fin: %d frames, balon=%d pts", n2, len(dense_traj))
             if dense_traj:
@@ -214,6 +222,14 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--roi", default=None,
                     help="json de poligono de cancha (scripts.pick_roi); filtra balon fuera de zona de juego")
     ap.add_argument("--job-id", default=None, help="id del job (default: vly_<epoch>)")
+    ap.add_argument("--residual", type=float, default=1.0,
+                    help="gate de residual del tracker vs prediccion (1.0=solo teleport; <1.0 aprieta, rechaza FP en oclusion)")
+    ap.add_argument("--ball-conf", type=float, default=0.25,
+                    help="umbral conf del especialista de balon. subir mata FP de oclusion (riesgo: recall en escena oscura)")
+    ap.add_argument("--detour", type=float, default=1.8,
+                    help="filtro de bursts: borra islote de FP si prev->FP->next es >N veces el directo (99 desactiva)")
+    ap.add_argument("--reacq-radius", type=float, default=0.5,
+                    help="re-adquisicion: solo candidatos a <N*ancho de la ultima pos conocida (corta balon de banda). bajar aprieta; 99 desactiva")
     args = ap.parse_args(argv)
 
     logging.basicConfig(
@@ -233,7 +249,9 @@ def main(argv: list[str] | None = None) -> int:
         meta, traj, players, events, sampled_fps = run_pipeline(
             args.video, args.model, args.sample, args.start, args.end,
             args.ball_model, device=args.device, half=half, roi_path=args.roi,
-            dense_sample=args.dense,
+            dense_sample=args.dense, residual_frac=args.residual,
+            detour_ratio=args.detour, reacq_radius_frac=args.reacq_radius,
+            ball_conf=args.ball_conf,
         )
         result = build_result(
             meta, traj, players, events,

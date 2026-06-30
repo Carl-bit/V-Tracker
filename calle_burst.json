@@ -1,0 +1,2629 @@
+{
+  "match_metadata": {
+    "schema_version": "1.0.0",
+    "job_id": "vly_1782856767",
+    "status": "completado",
+    "processed_at": "2026-06-30T22:02:22.590556+00:00",
+    "sampled_fps": 10.003493408885253,
+    "video": {
+      "duration_seconds": 5313.243866666667,
+      "fps_processed": 30.010480226655762,
+      "original_resolution": "1920x1080"
+    },
+    "statistics_summary": {
+      "total_rallies": 1,
+      "total_ball_touches": 11,
+      "max_ball_speed_kmh": 101.02,
+      "attack_efficiency_percentage": 36.4
+    }
+  },
+  "charts_data": {
+    "ball_speed_timeline": [
+      {
+        "timestamp": 1600.141,
+        "speed": 20.17
+      },
+      {
+        "timestamp": 1600.241,
+        "speed": 29.69
+      },
+      {
+        "timestamp": 1600.341,
+        "speed": 4.47
+      },
+      {
+        "timestamp": 1600.441,
+        "speed": 10.54
+      },
+      {
+        "timestamp": 1600.541,
+        "speed": 16.18
+      },
+      {
+        "timestamp": 1600.641,
+        "speed": 27.76
+      },
+      {
+        "timestamp": 1600.741,
+        "speed": 36.78
+      },
+      {
+        "timestamp": 1600.841,
+        "speed": 2.49
+      },
+      {
+        "timestamp": 1600.941,
+        "speed": 30.92
+      },
+      {
+        "timestamp": 1601.041,
+        "speed": 28.35
+      },
+      {
+        "timestamp": 1601.141,
+        "speed": 22.73
+      },
+      {
+        "timestamp": 1601.241,
+        "speed": 17.33
+      },
+      {
+        "timestamp": 1601.341,
+        "speed": 10.38
+      },
+      {
+        "timestamp": 1601.441,
+        "speed": 5.15
+      },
+      {
+        "timestamp": 1601.541,
+        "speed": 8.95
+      },
+      {
+        "timestamp": 1601.64,
+        "speed": 22.29
+      },
+      {
+        "timestamp": 1601.74,
+        "speed": 40.93
+      },
+      {
+        "timestamp": 1601.84,
+        "speed": 64.87
+      },
+      {
+        "timestamp": 1601.94,
+        "speed": 40.32
+      },
+      {
+        "timestamp": 1611.837,
+        "speed": 0.81
+      },
+      {
+        "timestamp": 1611.937,
+        "speed": 12.87
+      },
+      {
+        "timestamp": 1612.037,
+        "speed": 14.26
+      },
+      {
+        "timestamp": 1612.137,
+        "speed": 11.76
+      },
+      {
+        "timestamp": 1612.237,
+        "speed": 9.41
+      },
+      {
+        "timestamp": 1612.337,
+        "speed": 9.41
+      },
+      {
+        "timestamp": 1612.437,
+        "speed": 9.41
+      },
+      {
+        "timestamp": 1612.537,
+        "speed": 7.67
+      },
+      {
+        "timestamp": 1612.637,
+        "speed": 7.67
+      },
+      {
+        "timestamp": 1612.737,
+        "speed": 7.67
+      },
+      {
+        "timestamp": 1612.837,
+        "speed": 6.52
+      },
+      {
+        "timestamp": 1612.937,
+        "speed": 6.52
+      },
+      {
+        "timestamp": 1613.037,
+        "speed": 4.06
+      },
+      {
+        "timestamp": 1613.136,
+        "speed": 4.12
+      },
+      {
+        "timestamp": 1617.035,
+        "speed": 3.03
+      },
+      {
+        "timestamp": 1617.135,
+        "speed": 4.94
+      },
+      {
+        "timestamp": 1617.235,
+        "speed": 4.94
+      },
+      {
+        "timestamp": 1617.335,
+        "speed": 1.8
+      },
+      {
+        "timestamp": 1617.435,
+        "speed": 2.83
+      },
+      {
+        "timestamp": 1617.535,
+        "speed": 10.09
+      },
+      {
+        "timestamp": 1617.635,
+        "speed": 2.13
+      },
+      {
+        "timestamp": 1617.735,
+        "speed": 2.13
+      },
+      {
+        "timestamp": 1617.835,
+        "speed": 2.13
+      },
+      {
+        "timestamp": 1617.935,
+        "speed": 2.13
+      },
+      {
+        "timestamp": 1618.035,
+        "speed": 1.47
+      },
+      {
+        "timestamp": 1618.135,
+        "speed": 0.17
+      },
+      {
+        "timestamp": 1618.235,
+        "speed": 0.17
+      },
+      {
+        "timestamp": 1618.335,
+        "speed": 0.17
+      },
+      {
+        "timestamp": 1618.435,
+        "speed": 0.17
+      },
+      {
+        "timestamp": 1618.535,
+        "speed": 0.17
+      },
+      {
+        "timestamp": 1618.635,
+        "speed": 0.17
+      },
+      {
+        "timestamp": 1618.735,
+        "speed": 1.86
+      },
+      {
+        "timestamp": 1618.834,
+        "speed": 0.53
+      },
+      {
+        "timestamp": 1618.934,
+        "speed": 0.4
+      },
+      {
+        "timestamp": 1619.034,
+        "speed": 5.52
+      },
+      {
+        "timestamp": 1619.134,
+        "speed": 0.37
+      },
+      {
+        "timestamp": 1619.234,
+        "speed": 0.37
+      },
+      {
+        "timestamp": 1619.334,
+        "speed": 0.64
+      },
+      {
+        "timestamp": 1619.434,
+        "speed": 0.64
+      },
+      {
+        "timestamp": 1619.534,
+        "speed": 0.64
+      },
+      {
+        "timestamp": 1619.634,
+        "speed": 0.21
+      },
+      {
+        "timestamp": 1619.734,
+        "speed": 0.84
+      },
+      {
+        "timestamp": 1619.834,
+        "speed": 0.84
+      },
+      {
+        "timestamp": 1619.934,
+        "speed": 0.84
+      },
+      {
+        "timestamp": 1620.034,
+        "speed": 3.04
+      },
+      {
+        "timestamp": 1620.134,
+        "speed": 2.4
+      },
+      {
+        "timestamp": 1620.234,
+        "speed": 2.4
+      },
+      {
+        "timestamp": 1620.334,
+        "speed": 2.4
+      },
+      {
+        "timestamp": 1620.434,
+        "speed": 2.35
+      },
+      {
+        "timestamp": 1620.534,
+        "speed": 5.63
+      },
+      {
+        "timestamp": 1620.634,
+        "speed": 5.63
+      },
+      {
+        "timestamp": 1620.734,
+        "speed": 5.63
+      },
+      {
+        "timestamp": 1620.834,
+        "speed": 7.88
+      },
+      {
+        "timestamp": 1620.934,
+        "speed": 7.88
+      },
+      {
+        "timestamp": 1621.034,
+        "speed": 7.88
+      },
+      {
+        "timestamp": 1621.134,
+        "speed": 3.25
+      },
+      {
+        "timestamp": 1621.234,
+        "speed": 0.55
+      },
+      {
+        "timestamp": 1621.334,
+        "speed": 2.01
+      },
+      {
+        "timestamp": 1621.434,
+        "speed": 4.7
+      },
+      {
+        "timestamp": 1621.534,
+        "speed": 11.47
+      },
+      {
+        "timestamp": 1621.633,
+        "speed": 10.58
+      },
+      {
+        "timestamp": 1621.733,
+        "speed": 8.09
+      },
+      {
+        "timestamp": 1621.833,
+        "speed": 5.57
+      },
+      {
+        "timestamp": 1621.933,
+        "speed": 2.62
+      },
+      {
+        "timestamp": 1622.033,
+        "speed": 2.51
+      },
+      {
+        "timestamp": 1622.133,
+        "speed": 4.96
+      },
+      {
+        "timestamp": 1622.233,
+        "speed": 11.28
+      },
+      {
+        "timestamp": 1622.333,
+        "speed": 18.05
+      },
+      {
+        "timestamp": 1622.433,
+        "speed": 10.04
+      },
+      {
+        "timestamp": 1622.533,
+        "speed": 10.04
+      },
+      {
+        "timestamp": 1622.633,
+        "speed": 10.04
+      },
+      {
+        "timestamp": 1622.733,
+        "speed": 26.22
+      },
+      {
+        "timestamp": 1622.833,
+        "speed": 19.71
+      },
+      {
+        "timestamp": 1622.933,
+        "speed": 14.47
+      },
+      {
+        "timestamp": 1623.033,
+        "speed": 8.6
+      },
+      {
+        "timestamp": 1623.133,
+        "speed": 5.07
+      },
+      {
+        "timestamp": 1623.233,
+        "speed": 4.1
+      },
+      {
+        "timestamp": 1623.333,
+        "speed": 7.07
+      },
+      {
+        "timestamp": 1623.433,
+        "speed": 9.83
+      },
+      {
+        "timestamp": 1623.533,
+        "speed": 13.99
+      },
+      {
+        "timestamp": 1623.633,
+        "speed": 17.54
+      },
+      {
+        "timestamp": 1623.733,
+        "speed": 19.67
+      },
+      {
+        "timestamp": 1623.833,
+        "speed": 23.94
+      },
+      {
+        "timestamp": 1623.933,
+        "speed": 7.99
+      },
+      {
+        "timestamp": 1624.033,
+        "speed": 18.68
+      },
+      {
+        "timestamp": 1624.133,
+        "speed": 14.33
+      },
+      {
+        "timestamp": 1624.233,
+        "speed": 11.18
+      },
+      {
+        "timestamp": 1624.333,
+        "speed": 7.95
+      },
+      {
+        "timestamp": 1624.433,
+        "speed": 6.56
+      },
+      {
+        "timestamp": 1624.532,
+        "speed": 6.89
+      },
+      {
+        "timestamp": 1624.632,
+        "speed": 9.06
+      },
+      {
+        "timestamp": 1624.732,
+        "speed": 12.43
+      },
+      {
+        "timestamp": 1624.832,
+        "speed": 20.15
+      },
+      {
+        "timestamp": 1624.932,
+        "speed": 14.18
+      },
+      {
+        "timestamp": 1625.032,
+        "speed": 11.68
+      },
+      {
+        "timestamp": 1625.132,
+        "speed": 8.42
+      },
+      {
+        "timestamp": 1625.232,
+        "speed": 4.51
+      },
+      {
+        "timestamp": 1625.332,
+        "speed": 1.16
+      },
+      {
+        "timestamp": 1625.432,
+        "speed": 2.91
+      },
+      {
+        "timestamp": 1625.532,
+        "speed": 7.04
+      },
+      {
+        "timestamp": 1625.632,
+        "speed": 10.87
+      },
+      {
+        "timestamp": 1625.732,
+        "speed": 15.93
+      },
+      {
+        "timestamp": 1625.832,
+        "speed": 20.24
+      },
+      {
+        "timestamp": 1625.932,
+        "speed": 18.92
+      },
+      {
+        "timestamp": 1626.032,
+        "speed": 34.3
+      },
+      {
+        "timestamp": 1626.132,
+        "speed": 28.6
+      },
+      {
+        "timestamp": 1626.232,
+        "speed": 24.22
+      },
+      {
+        "timestamp": 1626.332,
+        "speed": 18.88
+      },
+      {
+        "timestamp": 1626.432,
+        "speed": 14.6
+      },
+      {
+        "timestamp": 1626.532,
+        "speed": 10.8
+      },
+      {
+        "timestamp": 1626.632,
+        "speed": 7.56
+      },
+      {
+        "timestamp": 1626.732,
+        "speed": 6.43
+      },
+      {
+        "timestamp": 1626.832,
+        "speed": 6.96
+      },
+      {
+        "timestamp": 1626.932,
+        "speed": 10.22
+      },
+      {
+        "timestamp": 1627.032,
+        "speed": 13.5
+      },
+      {
+        "timestamp": 1627.132,
+        "speed": 15.02
+      },
+      {
+        "timestamp": 1627.232,
+        "speed": 20.01
+      },
+      {
+        "timestamp": 1627.332,
+        "speed": 22.26
+      },
+      {
+        "timestamp": 1627.431,
+        "speed": 25.36
+      },
+      {
+        "timestamp": 1627.531,
+        "speed": 15.58
+      },
+      {
+        "timestamp": 1627.631,
+        "speed": 27.19
+      },
+      {
+        "timestamp": 1627.731,
+        "speed": 23.81
+      },
+      {
+        "timestamp": 1627.831,
+        "speed": 19.1
+      },
+      {
+        "timestamp": 1627.931,
+        "speed": 15.66
+      },
+      {
+        "timestamp": 1628.031,
+        "speed": 12.24
+      },
+      {
+        "timestamp": 1628.131,
+        "speed": 8.46
+      },
+      {
+        "timestamp": 1628.231,
+        "speed": 6.19
+      },
+      {
+        "timestamp": 1628.331,
+        "speed": 7.54
+      },
+      {
+        "timestamp": 1628.431,
+        "speed": 7.54
+      },
+      {
+        "timestamp": 1628.531,
+        "speed": 10.25
+      },
+      {
+        "timestamp": 1628.631,
+        "speed": 14.13
+      },
+      {
+        "timestamp": 1628.731,
+        "speed": 17.86
+      },
+      {
+        "timestamp": 1628.831,
+        "speed": 21.23
+      },
+      {
+        "timestamp": 1628.931,
+        "speed": 3.39
+      },
+      {
+        "timestamp": 1629.031,
+        "speed": 3.39
+      },
+      {
+        "timestamp": 1629.131,
+        "speed": 16.96
+      },
+      {
+        "timestamp": 1629.231,
+        "speed": 12.44
+      },
+      {
+        "timestamp": 1629.331,
+        "speed": 8.04
+      },
+      {
+        "timestamp": 1629.431,
+        "speed": 5.88
+      },
+      {
+        "timestamp": 1629.531,
+        "speed": 4.84
+      },
+      {
+        "timestamp": 1629.631,
+        "speed": 5.53
+      },
+      {
+        "timestamp": 1629.731,
+        "speed": 7.67
+      },
+      {
+        "timestamp": 1629.831,
+        "speed": 9.99
+      },
+      {
+        "timestamp": 1629.931,
+        "speed": 11.7
+      },
+      {
+        "timestamp": 1630.031,
+        "speed": 13.46
+      },
+      {
+        "timestamp": 1630.131,
+        "speed": 2.61
+      },
+      {
+        "timestamp": 1630.23,
+        "speed": 2.61
+      },
+      {
+        "timestamp": 1630.33,
+        "speed": 2.61
+      },
+      {
+        "timestamp": 1630.43,
+        "speed": 2.61
+      },
+      {
+        "timestamp": 1630.53,
+        "speed": 2.61
+      },
+      {
+        "timestamp": 1630.63,
+        "speed": 18.41
+      },
+      {
+        "timestamp": 1630.73,
+        "speed": 15.64
+      },
+      {
+        "timestamp": 1630.83,
+        "speed": 13.18
+      },
+      {
+        "timestamp": 1630.93,
+        "speed": 10.98
+      },
+      {
+        "timestamp": 1631.03,
+        "speed": 8.88
+      },
+      {
+        "timestamp": 1631.13,
+        "speed": 4.94
+      },
+      {
+        "timestamp": 1631.23,
+        "speed": 4.15
+      },
+      {
+        "timestamp": 1631.33,
+        "speed": 4.07
+      },
+      {
+        "timestamp": 1631.43,
+        "speed": 5.7
+      },
+      {
+        "timestamp": 1631.53,
+        "speed": 8.53
+      },
+      {
+        "timestamp": 1631.63,
+        "speed": 11.88
+      },
+      {
+        "timestamp": 1631.73,
+        "speed": 16.11
+      },
+      {
+        "timestamp": 1631.83,
+        "speed": 18.14
+      },
+      {
+        "timestamp": 1631.93,
+        "speed": 3.07
+      },
+      {
+        "timestamp": 1632.03,
+        "speed": 3.07
+      },
+      {
+        "timestamp": 1632.13,
+        "speed": 3.07
+      },
+      {
+        "timestamp": 1632.23,
+        "speed": 7.71
+      },
+      {
+        "timestamp": 1632.33,
+        "speed": 6.65
+      },
+      {
+        "timestamp": 1632.43,
+        "speed": 6.01
+      },
+      {
+        "timestamp": 1632.53,
+        "speed": 6.51
+      },
+      {
+        "timestamp": 1632.63,
+        "speed": 9.82
+      },
+      {
+        "timestamp": 1632.73,
+        "speed": 5.71
+      },
+      {
+        "timestamp": 1632.83,
+        "speed": 2.15
+      },
+      {
+        "timestamp": 1632.93,
+        "speed": 4.97
+      },
+      {
+        "timestamp": 1633.03,
+        "speed": 10.39
+      },
+      {
+        "timestamp": 1633.129,
+        "speed": 16.67
+      },
+      {
+        "timestamp": 1633.229,
+        "speed": 16.67
+      },
+      {
+        "timestamp": 1633.329,
+        "speed": 16.67
+      },
+      {
+        "timestamp": 1633.429,
+        "speed": 16.67
+      },
+      {
+        "timestamp": 1633.529,
+        "speed": 2.56
+      },
+      {
+        "timestamp": 1633.629,
+        "speed": 2.56
+      },
+      {
+        "timestamp": 1633.729,
+        "speed": 11.15
+      },
+      {
+        "timestamp": 1633.829,
+        "speed": 11.15
+      },
+      {
+        "timestamp": 1633.929,
+        "speed": 7.09
+      },
+      {
+        "timestamp": 1634.029,
+        "speed": 2.53
+      },
+      {
+        "timestamp": 1634.929,
+        "speed": 13.66
+      },
+      {
+        "timestamp": 1635.029,
+        "speed": 3.03
+      },
+      {
+        "timestamp": 1635.129,
+        "speed": 3.03
+      },
+      {
+        "timestamp": 1635.229,
+        "speed": 3.03
+      },
+      {
+        "timestamp": 1635.329,
+        "speed": 9.17
+      },
+      {
+        "timestamp": 1635.429,
+        "speed": 2.45
+      },
+      {
+        "timestamp": 1635.529,
+        "speed": 6.11
+      },
+      {
+        "timestamp": 1636.428,
+        "speed": 0.26
+      },
+      {
+        "timestamp": 1636.528,
+        "speed": 1.7
+      },
+      {
+        "timestamp": 1636.628,
+        "speed": 0.12
+      },
+      {
+        "timestamp": 1636.728,
+        "speed": 1.89
+      },
+      {
+        "timestamp": 1636.828,
+        "speed": 5.19
+      },
+      {
+        "timestamp": 1636.928,
+        "speed": 2.97
+      },
+      {
+        "timestamp": 1637.028,
+        "speed": 2.59
+      },
+      {
+        "timestamp": 1637.128,
+        "speed": 3.54
+      },
+      {
+        "timestamp": 1637.228,
+        "speed": 83.3
+      },
+      {
+        "timestamp": 1637.328,
+        "speed": 4.9
+      },
+      {
+        "timestamp": 1637.428,
+        "speed": 4.05
+      },
+      {
+        "timestamp": 1637.528,
+        "speed": 4.74
+      },
+      {
+        "timestamp": 1637.628,
+        "speed": 4.74
+      },
+      {
+        "timestamp": 1637.728,
+        "speed": 4.74
+      },
+      {
+        "timestamp": 1637.828,
+        "speed": 4.74
+      },
+      {
+        "timestamp": 1637.928,
+        "speed": 5.24
+      },
+      {
+        "timestamp": 1638.028,
+        "speed": 7.21
+      },
+      {
+        "timestamp": 1638.128,
+        "speed": 11.17
+      },
+      {
+        "timestamp": 1638.228,
+        "speed": 8.43
+      },
+      {
+        "timestamp": 1638.328,
+        "speed": 6.18
+      },
+      {
+        "timestamp": 1638.428,
+        "speed": 6.18
+      },
+      {
+        "timestamp": 1638.528,
+        "speed": 8.69
+      },
+      {
+        "timestamp": 1638.628,
+        "speed": 8.66
+      },
+      {
+        "timestamp": 1638.728,
+        "speed": 9.18
+      },
+      {
+        "timestamp": 1638.827,
+        "speed": 7.44
+      },
+      {
+        "timestamp": 1638.927,
+        "speed": 8.74
+      },
+      {
+        "timestamp": 1639.027,
+        "speed": 8.74
+      },
+      {
+        "timestamp": 1639.127,
+        "speed": 8.74
+      },
+      {
+        "timestamp": 1639.227,
+        "speed": 8.74
+      },
+      {
+        "timestamp": 1639.327,
+        "speed": 12.64
+      },
+      {
+        "timestamp": 1639.427,
+        "speed": 11.41
+      },
+      {
+        "timestamp": 1639.527,
+        "speed": 10.21
+      },
+      {
+        "timestamp": 1639.627,
+        "speed": 14.07
+      },
+      {
+        "timestamp": 1639.727,
+        "speed": 12.19
+      },
+      {
+        "timestamp": 1639.827,
+        "speed": 12.02
+      },
+      {
+        "timestamp": 1639.927,
+        "speed": 14.19
+      },
+      {
+        "timestamp": 1640.027,
+        "speed": 14.19
+      },
+      {
+        "timestamp": 1640.127,
+        "speed": 16.46
+      },
+      {
+        "timestamp": 1640.227,
+        "speed": 15.68
+      },
+      {
+        "timestamp": 1640.327,
+        "speed": 17.1
+      },
+      {
+        "timestamp": 1642.426,
+        "speed": 8.68
+      },
+      {
+        "timestamp": 1642.526,
+        "speed": 0.67
+      },
+      {
+        "timestamp": 1642.626,
+        "speed": 0.52
+      },
+      {
+        "timestamp": 1642.726,
+        "speed": 0.62
+      },
+      {
+        "timestamp": 1642.826,
+        "speed": 0.05
+      },
+      {
+        "timestamp": 1642.926,
+        "speed": 0.13
+      },
+      {
+        "timestamp": 1643.026,
+        "speed": 0.31
+      },
+      {
+        "timestamp": 1643.126,
+        "speed": 0.31
+      },
+      {
+        "timestamp": 1643.226,
+        "speed": 2.22
+      },
+      {
+        "timestamp": 1643.326,
+        "speed": 2.22
+      },
+      {
+        "timestamp": 1643.426,
+        "speed": 3.56
+      },
+      {
+        "timestamp": 1643.526,
+        "speed": 2.58
+      },
+      {
+        "timestamp": 1643.626,
+        "speed": 0.77
+      },
+      {
+        "timestamp": 1643.726,
+        "speed": 3.06
+      },
+      {
+        "timestamp": 1647.924,
+        "speed": 0.09
+      },
+      {
+        "timestamp": 1648.024,
+        "speed": 3.53
+      },
+      {
+        "timestamp": 1648.124,
+        "speed": 2.56
+      },
+      {
+        "timestamp": 1648.224,
+        "speed": 2.63
+      },
+      {
+        "timestamp": 1648.324,
+        "speed": 2.37
+      },
+      {
+        "timestamp": 1648.424,
+        "speed": 3.27
+      },
+      {
+        "timestamp": 1648.524,
+        "speed": 58.31
+      },
+      {
+        "timestamp": 1648.624,
+        "speed": 58.31
+      },
+      {
+        "timestamp": 1648.724,
+        "speed": 58.31
+      },
+      {
+        "timestamp": 1648.824,
+        "speed": 58.31
+      },
+      {
+        "timestamp": 1648.924,
+        "speed": 0.45
+      },
+      {
+        "timestamp": 1649.024,
+        "speed": 1.9
+      },
+      {
+        "timestamp": 1649.124,
+        "speed": 0.75
+      },
+      {
+        "timestamp": 1649.224,
+        "speed": 0.47
+      },
+      {
+        "timestamp": 1654.822,
+        "speed": 7.37
+      },
+      {
+        "timestamp": 1654.922,
+        "speed": 101.02
+      },
+      {
+        "timestamp": 1655.022,
+        "speed": 75.69
+      },
+      {
+        "timestamp": 1655.122,
+        "speed": 54.33
+      },
+      {
+        "timestamp": 1655.222,
+        "speed": 43.05
+      },
+      {
+        "timestamp": 1655.322,
+        "speed": 33.75
+      },
+      {
+        "timestamp": 1655.422,
+        "speed": 29.57
+      },
+      {
+        "timestamp": 1655.522,
+        "speed": 27.13
+      },
+      {
+        "timestamp": 1655.622,
+        "speed": 24.8
+      },
+      {
+        "timestamp": 1655.722,
+        "speed": 23.15
+      },
+      {
+        "timestamp": 1655.822,
+        "speed": 22.83
+      },
+      {
+        "timestamp": 1655.922,
+        "speed": 23.41
+      },
+      {
+        "timestamp": 1656.021,
+        "speed": 2.71
+      },
+      {
+        "timestamp": 1656.121,
+        "speed": 2.71
+      },
+      {
+        "timestamp": 1656.221,
+        "speed": 23.17
+      },
+      {
+        "timestamp": 1656.321,
+        "speed": 20.79
+      },
+      {
+        "timestamp": 1656.421,
+        "speed": 17.68
+      },
+      {
+        "timestamp": 1656.521,
+        "speed": 14.93
+      },
+      {
+        "timestamp": 1656.621,
+        "speed": 12.39
+      },
+      {
+        "timestamp": 1656.721,
+        "speed": 9.91
+      },
+      {
+        "timestamp": 1656.821,
+        "speed": 7.85
+      },
+      {
+        "timestamp": 1656.921,
+        "speed": 6.87
+      },
+      {
+        "timestamp": 1657.021,
+        "speed": 8.09
+      },
+      {
+        "timestamp": 1657.121,
+        "speed": 8.9
+      },
+      {
+        "timestamp": 1657.221,
+        "speed": 9.86
+      },
+      {
+        "timestamp": 1657.321,
+        "speed": 14.52
+      },
+      {
+        "timestamp": 1657.421,
+        "speed": 16.32
+      },
+      {
+        "timestamp": 1657.521,
+        "speed": 19.62
+      },
+      {
+        "timestamp": 1657.621,
+        "speed": 22.53
+      },
+      {
+        "timestamp": 1657.721,
+        "speed": 14.71
+      },
+      {
+        "timestamp": 1657.821,
+        "speed": 25.81
+      },
+      {
+        "timestamp": 1657.921,
+        "speed": 24.12
+      },
+      {
+        "timestamp": 1658.021,
+        "speed": 24.12
+      },
+      {
+        "timestamp": 1658.121,
+        "speed": 17.99
+      },
+      {
+        "timestamp": 1658.221,
+        "speed": 15.96
+      },
+      {
+        "timestamp": 1658.321,
+        "speed": 13.86
+      },
+      {
+        "timestamp": 1658.421,
+        "speed": 10.81
+      },
+      {
+        "timestamp": 1658.521,
+        "speed": 10.34
+      },
+      {
+        "timestamp": 1658.621,
+        "speed": 10.23
+      },
+      {
+        "timestamp": 1658.721,
+        "speed": 11.1
+      },
+      {
+        "timestamp": 1658.821,
+        "speed": 13.56
+      },
+      {
+        "timestamp": 1658.92,
+        "speed": 15.99
+      },
+      {
+        "timestamp": 1659.02,
+        "speed": 18.28
+      },
+      {
+        "timestamp": 1659.12,
+        "speed": 20.64
+      },
+      {
+        "timestamp": 1659.22,
+        "speed": 7.74
+      },
+      {
+        "timestamp": 1659.32,
+        "speed": 22.43
+      },
+      {
+        "timestamp": 1659.42,
+        "speed": 23.97
+      },
+      {
+        "timestamp": 1659.52,
+        "speed": 27.03
+      },
+      {
+        "timestamp": 1659.62,
+        "speed": 30.99
+      },
+      {
+        "timestamp": 1659.72,
+        "speed": 38.59
+      },
+      {
+        "timestamp": 1659.82,
+        "speed": 49.53
+      },
+      {
+        "timestamp": 1659.92,
+        "speed": 65.67
+      },
+      {
+        "timestamp": 1670.017,
+        "speed": 2.01
+      },
+      {
+        "timestamp": 1670.117,
+        "speed": 27.09
+      },
+      {
+        "timestamp": 1670.217,
+        "speed": 34.53
+      },
+      {
+        "timestamp": 1670.316,
+        "speed": 41.54
+      },
+      {
+        "timestamp": 1670.416,
+        "speed": 41.54
+      },
+      {
+        "timestamp": 1670.516,
+        "speed": 13.13
+      },
+      {
+        "timestamp": 1670.616,
+        "speed": 43.45
+      },
+      {
+        "timestamp": 1670.716,
+        "speed": 30.59
+      },
+      {
+        "timestamp": 1670.816,
+        "speed": 18.51
+      },
+      {
+        "timestamp": 1670.916,
+        "speed": 18.51
+      },
+      {
+        "timestamp": 1671.016,
+        "speed": 1.95
+      },
+      {
+        "timestamp": 1671.116,
+        "speed": 8.15
+      },
+      {
+        "timestamp": 1671.216,
+        "speed": 9.81
+      },
+      {
+        "timestamp": 1671.316,
+        "speed": 11.33
+      },
+      {
+        "timestamp": 1671.416,
+        "speed": 13.81
+      },
+      {
+        "timestamp": 1671.516,
+        "speed": 17.73
+      },
+      {
+        "timestamp": 1671.616,
+        "speed": 1.51
+      },
+      {
+        "timestamp": 1671.716,
+        "speed": 5.07
+      },
+      {
+        "timestamp": 1679.113,
+        "speed": 1.69
+      },
+      {
+        "timestamp": 1679.213,
+        "speed": 32.8
+      },
+      {
+        "timestamp": 1679.313,
+        "speed": 91.52
+      },
+      {
+        "timestamp": 1679.413,
+        "speed": 61.98
+      },
+      {
+        "timestamp": 1679.513,
+        "speed": 44.94
+      },
+      {
+        "timestamp": 1679.613,
+        "speed": 34.97
+      },
+      {
+        "timestamp": 1679.713,
+        "speed": 30.42
+      },
+      {
+        "timestamp": 1679.813,
+        "speed": 26.58
+      },
+      {
+        "timestamp": 1679.913,
+        "speed": 23.75
+      },
+      {
+        "timestamp": 1680.013,
+        "speed": 21.31
+      },
+      {
+        "timestamp": 1680.113,
+        "speed": 7.0
+      },
+      {
+        "timestamp": 1680.213,
+        "speed": 7.0
+      },
+      {
+        "timestamp": 1680.313,
+        "speed": 7.0
+      },
+      {
+        "timestamp": 1680.413,
+        "speed": 7.0
+      },
+      {
+        "timestamp": 1680.513,
+        "speed": 7.0
+      },
+      {
+        "timestamp": 1680.613,
+        "speed": 21.41
+      },
+      {
+        "timestamp": 1680.713,
+        "speed": 17.84
+      },
+      {
+        "timestamp": 1680.813,
+        "speed": 14.8
+      },
+      {
+        "timestamp": 1680.913,
+        "speed": 12.24
+      },
+      {
+        "timestamp": 1681.013,
+        "speed": 8.84
+      },
+      {
+        "timestamp": 1681.113,
+        "speed": 6.01
+      },
+      {
+        "timestamp": 1681.213,
+        "speed": 2.73
+      },
+      {
+        "timestamp": 1681.313,
+        "speed": 0.56
+      },
+      {
+        "timestamp": 1681.413,
+        "speed": 3.59
+      },
+      {
+        "timestamp": 1681.513,
+        "speed": 6.88
+      },
+      {
+        "timestamp": 1681.613,
+        "speed": 10.55
+      },
+      {
+        "timestamp": 1681.713,
+        "speed": 13.61
+      },
+      {
+        "timestamp": 1681.812,
+        "speed": 17.28
+      },
+      {
+        "timestamp": 1681.912,
+        "speed": 20.34
+      },
+      {
+        "timestamp": 1682.012,
+        "speed": 22.76
+      },
+      {
+        "timestamp": 1682.112,
+        "speed": 27.89
+      },
+      {
+        "timestamp": 1682.212,
+        "speed": 8.66
+      },
+      {
+        "timestamp": 1682.312,
+        "speed": 8.66
+      },
+      {
+        "timestamp": 1682.412,
+        "speed": 8.66
+      },
+      {
+        "timestamp": 1682.512,
+        "speed": 18.89
+      },
+      {
+        "timestamp": 1682.612,
+        "speed": 15.74
+      },
+      {
+        "timestamp": 1682.712,
+        "speed": 11.98
+      },
+      {
+        "timestamp": 1682.812,
+        "speed": 9.41
+      },
+      {
+        "timestamp": 1682.912,
+        "speed": 6.86
+      },
+      {
+        "timestamp": 1683.012,
+        "speed": 6.53
+      },
+      {
+        "timestamp": 1683.112,
+        "speed": 7.44
+      },
+      {
+        "timestamp": 1683.212,
+        "speed": 10.01
+      },
+      {
+        "timestamp": 1683.312,
+        "speed": 12.64
+      },
+      {
+        "timestamp": 1683.412,
+        "speed": 15.94
+      },
+      {
+        "timestamp": 1683.512,
+        "speed": 19.74
+      },
+      {
+        "timestamp": 1683.612,
+        "speed": 46.95
+      },
+      {
+        "timestamp": 1683.712,
+        "speed": 55.69
+      },
+      {
+        "timestamp": 1683.812,
+        "speed": 66.69
+      },
+      {
+        "timestamp": 1683.912,
+        "speed": 66.69
+      },
+      {
+        "timestamp": 1684.012,
+        "speed": 78.21
+      },
+      {
+        "timestamp": 1694.108,
+        "speed": 0.38
+      },
+      {
+        "timestamp": 1694.208,
+        "speed": 86.15
+      },
+      {
+        "timestamp": 1694.308,
+        "speed": 86.15
+      },
+      {
+        "timestamp": 1694.408,
+        "speed": 13.71
+      },
+      {
+        "timestamp": 1694.508,
+        "speed": 17.95
+      },
+      {
+        "timestamp": 1694.608,
+        "speed": 10.05
+      },
+      {
+        "timestamp": 1694.708,
+        "speed": 25.15
+      },
+      {
+        "timestamp": 1694.808,
+        "speed": 11.1
+      },
+      {
+        "timestamp": 1694.908,
+        "speed": 11.1
+      },
+      {
+        "timestamp": 1695.008,
+        "speed": 11.1
+      },
+      {
+        "timestamp": 1695.108,
+        "speed": 23.04
+      },
+      {
+        "timestamp": 1695.208,
+        "speed": 23.04
+      },
+      {
+        "timestamp": 1695.308,
+        "speed": 23.04
+      },
+      {
+        "timestamp": 1695.408,
+        "speed": 23.04
+      },
+      {
+        "timestamp": 1695.508,
+        "speed": 9.35
+      }
+    ],
+    "team_possession_percentage": {
+      "team_a": 50.8,
+      "team_b": 49.2
+    }
+  },
+  "spatial_data": {
+    "ball_heat_map": [
+      {
+        "x_norm": 0.2083,
+        "y_norm": 0.2083,
+        "intensity": 2
+      },
+      {
+        "x_norm": 0.2083,
+        "y_norm": 0.2917,
+        "intensity": 1
+      },
+      {
+        "x_norm": 0.2083,
+        "y_norm": 0.375,
+        "intensity": 1
+      },
+      {
+        "x_norm": 0.2917,
+        "y_norm": 0.0417,
+        "intensity": 5
+      },
+      {
+        "x_norm": 0.2917,
+        "y_norm": 0.125,
+        "intensity": 2
+      },
+      {
+        "x_norm": 0.2917,
+        "y_norm": 0.2083,
+        "intensity": 10
+      },
+      {
+        "x_norm": 0.2917,
+        "y_norm": 0.2917,
+        "intensity": 9
+      },
+      {
+        "x_norm": 0.2917,
+        "y_norm": 0.375,
+        "intensity": 12
+      },
+      {
+        "x_norm": 0.2917,
+        "y_norm": 0.4583,
+        "intensity": 7
+      },
+      {
+        "x_norm": 0.2917,
+        "y_norm": 0.5417,
+        "intensity": 6
+      },
+      {
+        "x_norm": 0.375,
+        "y_norm": 0.0417,
+        "intensity": 1
+      },
+      {
+        "x_norm": 0.375,
+        "y_norm": 0.125,
+        "intensity": 11
+      },
+      {
+        "x_norm": 0.375,
+        "y_norm": 0.2083,
+        "intensity": 16
+      },
+      {
+        "x_norm": 0.375,
+        "y_norm": 0.2917,
+        "intensity": 30
+      },
+      {
+        "x_norm": 0.375,
+        "y_norm": 0.375,
+        "intensity": 18
+      },
+      {
+        "x_norm": 0.375,
+        "y_norm": 0.4583,
+        "intensity": 4
+      },
+      {
+        "x_norm": 0.375,
+        "y_norm": 0.5417,
+        "intensity": 32
+      },
+      {
+        "x_norm": 0.4583,
+        "y_norm": 0.125,
+        "intensity": 7
+      },
+      {
+        "x_norm": 0.4583,
+        "y_norm": 0.2083,
+        "intensity": 16
+      },
+      {
+        "x_norm": 0.4583,
+        "y_norm": 0.2917,
+        "intensity": 14
+      },
+      {
+        "x_norm": 0.4583,
+        "y_norm": 0.375,
+        "intensity": 6
+      },
+      {
+        "x_norm": 0.4583,
+        "y_norm": 0.4583,
+        "intensity": 1
+      },
+      {
+        "x_norm": 0.5417,
+        "y_norm": 0.125,
+        "intensity": 9
+      },
+      {
+        "x_norm": 0.5417,
+        "y_norm": 0.2083,
+        "intensity": 7
+      },
+      {
+        "x_norm": 0.5417,
+        "y_norm": 0.2917,
+        "intensity": 8
+      },
+      {
+        "x_norm": 0.5417,
+        "y_norm": 0.375,
+        "intensity": 14
+      },
+      {
+        "x_norm": 0.5417,
+        "y_norm": 0.4583,
+        "intensity": 7
+      },
+      {
+        "x_norm": 0.5417,
+        "y_norm": 0.5417,
+        "intensity": 15
+      },
+      {
+        "x_norm": 0.625,
+        "y_norm": 0.125,
+        "intensity": 2
+      },
+      {
+        "x_norm": 0.625,
+        "y_norm": 0.2083,
+        "intensity": 3
+      },
+      {
+        "x_norm": 0.625,
+        "y_norm": 0.2917,
+        "intensity": 10
+      },
+      {
+        "x_norm": 0.625,
+        "y_norm": 0.375,
+        "intensity": 4
+      },
+      {
+        "x_norm": 0.625,
+        "y_norm": 0.4583,
+        "intensity": 2
+      },
+      {
+        "x_norm": 0.625,
+        "y_norm": 0.5417,
+        "intensity": 10
+      },
+      {
+        "x_norm": 0.625,
+        "y_norm": 0.625,
+        "intensity": 11
+      },
+      {
+        "x_norm": 0.7083,
+        "y_norm": 0.0417,
+        "intensity": 1
+      },
+      {
+        "x_norm": 0.7083,
+        "y_norm": 0.125,
+        "intensity": 1
+      },
+      {
+        "x_norm": 0.7083,
+        "y_norm": 0.2917,
+        "intensity": 3
+      },
+      {
+        "x_norm": 0.7083,
+        "y_norm": 0.375,
+        "intensity": 3
+      },
+      {
+        "x_norm": 0.7083,
+        "y_norm": 0.4583,
+        "intensity": 1
+      },
+      {
+        "x_norm": 0.7083,
+        "y_norm": 0.5417,
+        "intensity": 35
+      },
+      {
+        "x_norm": 0.7083,
+        "y_norm": 0.625,
+        "intensity": 8
+      },
+      {
+        "x_norm": 0.7083,
+        "y_norm": 0.7917,
+        "intensity": 1
+      },
+      {
+        "x_norm": 0.7917,
+        "y_norm": 0.0417,
+        "intensity": 1
+      },
+      {
+        "x_norm": 0.7917,
+        "y_norm": 0.625,
+        "intensity": 6
+      },
+      {
+        "x_norm": 0.875,
+        "y_norm": 0.0417,
+        "intensity": 1
+      },
+      {
+        "x_norm": 0.875,
+        "y_norm": 0.125,
+        "intensity": 1
+      },
+      {
+        "x_norm": 0.875,
+        "y_norm": 0.2917,
+        "intensity": 4
+      },
+      {
+        "x_norm": 0.875,
+        "y_norm": 0.375,
+        "intensity": 1
+      },
+      {
+        "x_norm": 0.875,
+        "y_norm": 0.4583,
+        "intensity": 3
+      },
+      {
+        "x_norm": 0.875,
+        "y_norm": 0.5417,
+        "intensity": 2
+      },
+      {
+        "x_norm": 0.875,
+        "y_norm": 0.625,
+        "intensity": 6
+      },
+      {
+        "x_norm": 0.9583,
+        "y_norm": 0.0417,
+        "intensity": 1
+      },
+      {
+        "x_norm": 0.9583,
+        "y_norm": 0.2917,
+        "intensity": 3
+      },
+      {
+        "x_norm": 0.9583,
+        "y_norm": 0.375,
+        "intensity": 8
+      },
+      {
+        "x_norm": 0.9583,
+        "y_norm": 0.4583,
+        "intensity": 1
+      },
+      {
+        "x_norm": 0.9583,
+        "y_norm": 0.5417,
+        "intensity": 3
+      },
+      {
+        "x_norm": 0.9583,
+        "y_norm": 0.625,
+        "intensity": 4
+      },
+      {
+        "x_norm": 0.9583,
+        "y_norm": 0.7083,
+        "intensity": 4
+      }
+    ],
+    "player_impact_zones": [
+      {
+        "player_id": "player_2",
+        "role": "unknown",
+        "avg_x": 0.4675,
+        "avg_y": 0.5312
+      },
+      {
+        "player_id": "player_3",
+        "role": "unknown",
+        "avg_x": 0.4886,
+        "avg_y": 0.5291
+      },
+      {
+        "player_id": "player_4",
+        "role": "unknown",
+        "avg_x": 0.6016,
+        "avg_y": 0.5279
+      },
+      {
+        "player_id": "player_5",
+        "role": "unknown",
+        "avg_x": 0.6989,
+        "avg_y": 0.5012
+      },
+      {
+        "player_id": "player_6",
+        "role": "unknown",
+        "avg_x": 0.557,
+        "avg_y": 0.5351
+      },
+      {
+        "player_id": "player_7",
+        "role": "unknown",
+        "avg_x": 0.7266,
+        "avg_y": 0.5201
+      },
+      {
+        "player_id": "player_8",
+        "role": "unknown",
+        "avg_x": 0.6407,
+        "avg_y": 0.5065
+      },
+      {
+        "player_id": "player_13",
+        "role": "unknown",
+        "avg_x": 0.3227,
+        "avg_y": 0.5443
+      },
+      {
+        "player_id": "player_18",
+        "role": "unknown",
+        "avg_x": 0.4488,
+        "avg_y": 0.5344
+      },
+      {
+        "player_id": "player_23",
+        "role": "unknown",
+        "avg_x": 0.6394,
+        "avg_y": 0.5306
+      },
+      {
+        "player_id": "player_25",
+        "role": "unknown",
+        "avg_x": 0.5252,
+        "avg_y": 0.5262
+      },
+      {
+        "player_id": "player_38",
+        "role": "unknown",
+        "avg_x": 0.7017,
+        "avg_y": 0.5303
+      },
+      {
+        "player_id": "player_45",
+        "role": "unknown",
+        "avg_x": 0.6759,
+        "avg_y": 0.5264
+      },
+      {
+        "player_id": "player_48",
+        "role": "unknown",
+        "avg_x": 0.2164,
+        "avg_y": 0.5463
+      },
+      {
+        "player_id": "player_64",
+        "role": "unknown",
+        "avg_x": 0.3809,
+        "avg_y": 0.5408
+      },
+      {
+        "player_id": "player_66",
+        "role": "unknown",
+        "avg_x": 0.5146,
+        "avg_y": 0.5278
+      },
+      {
+        "player_id": "player_70",
+        "role": "unknown",
+        "avg_x": 0.5433,
+        "avg_y": 0.529
+      },
+      {
+        "player_id": "player_72",
+        "role": "unknown",
+        "avg_x": 0.5412,
+        "avg_y": 0.5307
+      },
+      {
+        "player_id": "player_75",
+        "role": "unknown",
+        "avg_x": 0.4802,
+        "avg_y": 0.5373
+      },
+      {
+        "player_id": "player_77",
+        "role": "unknown",
+        "avg_x": 0.6753,
+        "avg_y": 0.5303
+      },
+      {
+        "player_id": "player_81",
+        "role": "unknown",
+        "avg_x": 0.4252,
+        "avg_y": 0.5408
+      },
+      {
+        "player_id": "player_82",
+        "role": "unknown",
+        "avg_x": 0.6128,
+        "avg_y": 0.5236
+      },
+      {
+        "player_id": "player_86",
+        "role": "unknown",
+        "avg_x": 0.4335,
+        "avg_y": 0.5349
+      },
+      {
+        "player_id": "player_93",
+        "role": "unknown",
+        "avg_x": 0.7035,
+        "avg_y": 0.5294
+      },
+      {
+        "player_id": "player_105",
+        "role": "unknown",
+        "avg_x": 0.4079,
+        "avg_y": 0.5346
+      },
+      {
+        "player_id": "player_114",
+        "role": "unknown",
+        "avg_x": 0.3425,
+        "avg_y": 0.5444
+      },
+      {
+        "player_id": "player_119",
+        "role": "unknown",
+        "avg_x": 0.8257,
+        "avg_y": 0.535
+      },
+      {
+        "player_id": "player_128",
+        "role": "unknown",
+        "avg_x": 0.679,
+        "avg_y": 0.5244
+      },
+      {
+        "player_id": "player_130",
+        "role": "unknown",
+        "avg_x": 0.3909,
+        "avg_y": 0.5324
+      },
+      {
+        "player_id": "player_142",
+        "role": "unknown",
+        "avg_x": 0.4368,
+        "avg_y": 0.5347
+      },
+      {
+        "player_id": "player_145",
+        "role": "unknown",
+        "avg_x": 0.4901,
+        "avg_y": 0.529
+      },
+      {
+        "player_id": "player_147",
+        "role": "unknown",
+        "avg_x": 0.2879,
+        "avg_y": 0.5427
+      },
+      {
+        "player_id": "player_150",
+        "role": "unknown",
+        "avg_x": 0.0576,
+        "avg_y": 0.5582
+      },
+      {
+        "player_id": "player_161",
+        "role": "unknown",
+        "avg_x": 0.2082,
+        "avg_y": 0.5528
+      },
+      {
+        "player_id": "player_188",
+        "role": "unknown",
+        "avg_x": 0.5796,
+        "avg_y": 0.5363
+      },
+      {
+        "player_id": "player_202",
+        "role": "unknown",
+        "avg_x": 0.3501,
+        "avg_y": 0.5387
+      },
+      {
+        "player_id": "player_207",
+        "role": "unknown",
+        "avg_x": 0.246,
+        "avg_y": 0.5508
+      },
+      {
+        "player_id": "player_212",
+        "role": "unknown",
+        "avg_x": 0.3699,
+        "avg_y": 0.5389
+      },
+      {
+        "player_id": "player_227",
+        "role": "unknown",
+        "avg_x": 0.4432,
+        "avg_y": 0.5346
+      },
+      {
+        "player_id": "player_231",
+        "role": "unknown",
+        "avg_x": 0.5901,
+        "avg_y": 0.5287
+      },
+      {
+        "player_id": "player_239",
+        "role": "unknown",
+        "avg_x": 0.5826,
+        "avg_y": 0.5157
+      },
+      {
+        "player_id": "player_240",
+        "role": "unknown",
+        "avg_x": 0.6802,
+        "avg_y": 0.5258
+      },
+      {
+        "player_id": "player_243",
+        "role": "unknown",
+        "avg_x": 0.5137,
+        "avg_y": 0.5232
+      },
+      {
+        "player_id": "player_266",
+        "role": "unknown",
+        "avg_x": 0.4579,
+        "avg_y": 0.5353
+      },
+      {
+        "player_id": "player_292",
+        "role": "unknown",
+        "avg_x": 0.6218,
+        "avg_y": 0.535
+      },
+      {
+        "player_id": "player_295",
+        "role": "unknown",
+        "avg_x": 0.5645,
+        "avg_y": 0.5319
+      },
+      {
+        "player_id": "player_296",
+        "role": "unknown",
+        "avg_x": 0.6596,
+        "avg_y": 0.5338
+      },
+      {
+        "player_id": "player_305",
+        "role": "unknown",
+        "avg_x": 0.5984,
+        "avg_y": 0.534
+      },
+      {
+        "player_id": "player_311",
+        "role": "unknown",
+        "avg_x": 0.2904,
+        "avg_y": 0.5547
+      },
+      {
+        "player_id": "player_315",
+        "role": "unknown",
+        "avg_x": 0.6962,
+        "avg_y": 0.5263
+      },
+      {
+        "player_id": "player_322",
+        "role": "unknown",
+        "avg_x": 0.5346,
+        "avg_y": 0.5351
+      },
+      {
+        "player_id": "player_324",
+        "role": "unknown",
+        "avg_x": 0.3061,
+        "avg_y": 0.5402
+      },
+      {
+        "player_id": "player_331",
+        "role": "unknown",
+        "avg_x": 0.7777,
+        "avg_y": 0.5325
+      },
+      {
+        "player_id": "player_334",
+        "role": "unknown",
+        "avg_x": 0.2831,
+        "avg_y": 0.5364
+      },
+      {
+        "player_id": "player_335",
+        "role": "unknown",
+        "avg_x": 0.4657,
+        "avg_y": 0.5316
+      },
+      {
+        "player_id": "player_338",
+        "role": "unknown",
+        "avg_x": 0.3917,
+        "avg_y": 0.5361
+      },
+      {
+        "player_id": "player_356",
+        "role": "unknown",
+        "avg_x": 0.3467,
+        "avg_y": 0.5421
+      },
+      {
+        "player_id": "player_361",
+        "role": "unknown",
+        "avg_x": 0.1748,
+        "avg_y": 0.5493
+      },
+      {
+        "player_id": "player_367",
+        "role": "unknown",
+        "avg_x": 0.6969,
+        "avg_y": 0.5314
+      },
+      {
+        "player_id": "player_380",
+        "role": "unknown",
+        "avg_x": 0.3493,
+        "avg_y": 0.5362
+      },
+      {
+        "player_id": "player_395",
+        "role": "unknown",
+        "avg_x": 0.4195,
+        "avg_y": 0.526
+      },
+      {
+        "player_id": "player_399",
+        "role": "unknown",
+        "avg_x": 0.6084,
+        "avg_y": 0.5335
+      },
+      {
+        "player_id": "player_400",
+        "role": "unknown",
+        "avg_x": 0.3674,
+        "avg_y": 0.5329
+      },
+      {
+        "player_id": "player_402",
+        "role": "unknown",
+        "avg_x": 0.4817,
+        "avg_y": 0.5295
+      },
+      {
+        "player_id": "player_420",
+        "role": "unknown",
+        "avg_x": 0.216,
+        "avg_y": 0.5551
+      },
+      {
+        "player_id": "player_426",
+        "role": "unknown",
+        "avg_x": 0.5848,
+        "avg_y": 0.5343
+      },
+      {
+        "player_id": "player_429",
+        "role": "unknown",
+        "avg_x": 0.6423,
+        "avg_y": 0.5191
+      },
+      {
+        "player_id": "player_430",
+        "role": "unknown",
+        "avg_x": 0.7185,
+        "avg_y": 0.5186
+      },
+      {
+        "player_id": "player_431",
+        "role": "unknown",
+        "avg_x": 0.5717,
+        "avg_y": 0.528
+      },
+      {
+        "player_id": "player_441",
+        "role": "unknown",
+        "avg_x": 0.6977,
+        "avg_y": 0.5272
+      },
+      {
+        "player_id": "player_446",
+        "role": "unknown",
+        "avg_x": 0.4587,
+        "avg_y": 0.5325
+      },
+      {
+        "player_id": "player_447",
+        "role": "unknown",
+        "avg_x": 0.5334,
+        "avg_y": 0.5281
+      },
+      {
+        "player_id": "player_463",
+        "role": "unknown",
+        "avg_x": 0.2087,
+        "avg_y": 0.5256
+      },
+      {
+        "player_id": "player_469",
+        "role": "unknown",
+        "avg_x": 0.4739,
+        "avg_y": 0.5377
+      },
+      {
+        "player_id": "player_471",
+        "role": "unknown",
+        "avg_x": 0.2451,
+        "avg_y": 0.5395
+      },
+      {
+        "player_id": "player_479",
+        "role": "unknown",
+        "avg_x": 0.3188,
+        "avg_y": 0.5344
+      },
+      {
+        "player_id": "player_482",
+        "role": "unknown",
+        "avg_x": 0.7601,
+        "avg_y": 0.5283
+      },
+      {
+        "player_id": "player_491",
+        "role": "unknown",
+        "avg_x": 0.3001,
+        "avg_y": 0.5383
+      },
+      {
+        "player_id": "player_496",
+        "role": "unknown",
+        "avg_x": 0.4092,
+        "avg_y": 0.5282
+      },
+      {
+        "player_id": "player_497",
+        "role": "unknown",
+        "avg_x": 0.2479,
+        "avg_y": 0.5468
+      },
+      {
+        "player_id": "player_499",
+        "role": "unknown",
+        "avg_x": 0.6061,
+        "avg_y": 0.5307
+      },
+      {
+        "player_id": "player_504",
+        "role": "unknown",
+        "avg_x": 0.2742,
+        "avg_y": 0.5402
+      },
+      {
+        "player_id": "player_509",
+        "role": "unknown",
+        "avg_x": 0.6551,
+        "avg_y": 0.5327
+      },
+      {
+        "player_id": "player_524",
+        "role": "unknown",
+        "avg_x": 0.4621,
+        "avg_y": 0.5311
+      },
+      {
+        "player_id": "player_525",
+        "role": "unknown",
+        "avg_x": 0.2443,
+        "avg_y": 0.5612
+      }
+    ]
+  },
+  "timeline_events": [
+    {
+      "event_id": "evt_001",
+      "timestamp": 1601.64,
+      "type": "armado",
+      "team": "team_b",
+      "player_id": "unknown",
+      "confidence": 0.25,
+      "ball_coordinates": {
+        "x_norm": 0.6682025909423828,
+        "y_norm": 0.37483335424352576
+      }
+    },
+    {
+      "event_id": "evt_002",
+      "timestamp": 1637.33,
+      "type": "recepcion",
+      "team": "team_b",
+      "player_id": "unknown",
+      "confidence": 0.9,
+      "ball_coordinates": {
+        "x_norm": 0.5822881698608399,
+        "y_norm": 0.5707425435384115
+      }
+    },
+    {
+      "event_id": "evt_003",
+      "timestamp": 1648.32,
+      "type": "recepcion",
+      "team": "team_b",
+      "player_id": "unknown",
+      "confidence": 0.66,
+      "ball_coordinates": {
+        "x_norm": 0.7193294525146484,
+        "y_norm": 0.5618817647298177
+      }
+    },
+    {
+      "event_id": "evt_004",
+      "timestamp": 1648.92,
+      "type": "armado",
+      "team": "team_a",
+      "player_id": "unknown",
+      "confidence": 0.29,
+      "ball_coordinates": {
+        "x_norm": 0.3711841106414795,
+        "y_norm": 0.385187092533818
+      }
+    },
+    {
+      "event_id": "evt_005",
+      "timestamp": 1654.82,
+      "type": "saque",
+      "team": "team_b",
+      "player_id": "unknown",
+      "confidence": 1.0,
+      "ball_coordinates": {
+        "x_norm": 0.9694016138712566,
+        "y_norm": 0.024098300933837892
+      }
+    },
+    {
+      "event_id": "evt_006",
+      "timestamp": 1655.22,
+      "type": "remate",
+      "team": "team_b",
+      "player_id": "unknown",
+      "confidence": 0.54,
+      "ball_coordinates": {
+        "x_norm": 0.552425479888916,
+        "y_norm": 0.12213614781697592
+      }
+    },
+    {
+      "event_id": "evt_007",
+      "timestamp": 1659.12,
+      "type": "armado",
+      "team": "team_a",
+      "player_id": "unknown",
+      "confidence": 0.57,
+      "ball_coordinates": {
+        "x_norm": 0.28643649419148765,
+        "y_norm": 0.3372097297951027
+      }
+    },
+    {
+      "event_id": "evt_008",
+      "timestamp": 1659.62,
+      "type": "remate",
+      "team": "team_a",
+      "player_id": "unknown",
+      "confidence": 0.6,
+      "ball_coordinates": {
+        "x_norm": 0.4477444012959798,
+        "y_norm": 0.24413399872956454
+      }
+    },
+    {
+      "event_id": "evt_009",
+      "timestamp": 1679.21,
+      "type": "remate",
+      "team": "team_b",
+      "player_id": "unknown",
+      "confidence": 0.92,
+      "ball_coordinates": {
+        "x_norm": 0.8628310839335124,
+        "y_norm": 0.0914483317622432
+      }
+    },
+    {
+      "event_id": "evt_010",
+      "timestamp": 1683.61,
+      "type": "remate",
+      "team": "team_a",
+      "player_id": "unknown",
+      "confidence": 0.86,
+      "ball_coordinates": {
+        "x_norm": 0.2856944402058919,
+        "y_norm": 0.33395356072319876
+      }
+    },
+    {
+      "event_id": "evt_011",
+      "timestamp": 1694.41,
+      "type": "recepcion",
+      "team": "team_b",
+      "player_id": "unknown",
+      "confidence": 0.5,
+      "ball_coordinates": {
+        "x_norm": 0.9346179962158203,
+        "y_norm": 0.5988469441731771
+      }
+    }
+  ]
+}
